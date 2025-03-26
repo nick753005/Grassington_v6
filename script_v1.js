@@ -1,5 +1,5 @@
 
-var num_bookings = Array(31).fill(0);
+var num_bookings = Array(32).fill(0);
 
 const month_days = [31,28,31,30,31,30,31,31,30,31,30,31];
 
@@ -155,9 +155,8 @@ function displayMessage(event) {
       
     const d = new Date(date);               // Create a Date object
     year = d.getFullYear(); 
-    month = d.getMonth();              
-    ndate = d.getDate();
-    nmonth = month + 1;                             // months start with zero for January
+    nmonth = ( d.getMonth() ) + 1;           // months start with zero for January           
+    ndate = d.getDate();                            
     const f_date = ndate+"/"+nmonth+"/"+year;      // dd/mm/yyyy format
 
     output = "Your table is booked for " + f_date + " at " + time + "pm for " + places;
@@ -175,7 +174,7 @@ function displayMessage(event) {
     cur_date = nd.getDate();
     
 
-    if( (year < cur_year) || ((year == cur_year) && (month < cur_month)) || ( (month == cur_month) && ( ndate < cur_date) ) )
+    if( (year < cur_year) || ((year == cur_year) && (nmonth < cur_month)) || ( (nmonth == cur_month) && ( ndate < cur_date) ) )
     {
         output = "Date must be sometime in the future"; 
         audio.src = "sounds/error.wav"; 
