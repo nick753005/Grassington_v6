@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en"></html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grassington Javascript v6.1</title>
+  <link rel="stylesheet" href="style_v5.css">
+</head>
+
+<body>
+
+  <h1>Grassington in the Yorkshire Dales
+    <br>aka<br>
+     Darrowby in All Creatures Great and Small
+  </h1>
+
+<p>Grassington is a small market town in Upper Wharfedale, North Yorkshire with a population of
+    just over 1000. It is a former lead mining village and its stone cottages 
+    and busy cobbled square form a focal point for local and visitor activity.
+</p>
+
+<div class="flex-container">
+  <div><img src="images\welcome-to-Grassington.jpg" alt="Welcome to Grassington"></div>  
+  <div><img src="images\Grass_Square.jpg" alt="Grassington Square"></div>
+  <div><img src="images\Cobbled_Street.jpg" alt="Cobbled Street"></div>
+</div>
+
+<p>Grassington lies on the east side of the river Wharfe. On the west side is the village of Threshfield 
+  where I live. The river can seem idyllic in summer, but can turn into a raging monster at almost any 
+  time of year when in spate.
+</p>
+
+<div class="flex-container">
+  <div><img src="images\Grassington_Bridge.jpg" alt="River Wharfe"></div>
+  <div><img src="images\IMG_0953.JPG" alt="River Wharfe"></div>
+  <div><img src="images\IMG_0959.JPG" alt="River Wharfe"></div>
+</div>
+
+<p>Grassington was used as the setting for the fictional market town of Darrowby
+  in the Channel 5 TV series of "All Creatures Great and Small". The first series was shown in
+  2020 and several more followed. Surprising little needed to be done to
+  transform the village square back to the late 1930s once the cars, modern shop fronts and satellite dishes
+  had been removed or hidden. Filming of the latest series is due in March 2025 
+  much to the delight or annoyance of the locals.
+</p>
+
+<div class="flex-container">
+  <div><img src="images\Devonshire.jpg"  alt="The Devonshire"></div>
+  <div><img src="images\Drovers_Arms.jpg" alt="Drovers Arms"></div>
+  <div><img src="images\Drovers_2.jpg" alt="Drovers Arms"></div>
+</div>
+
+<p>My local pub - The Devonshire - or just the Dev as it is known locally was transformed into The Drover's Arms.
+  The modern tarmac road surface in front of the pub was disguised using a mixture of straw and sand.
+</p>
+
+<div class="flex-container">
+  <div><img src="images\SK_1.jpg" alt="Skeldale House"></div>
+  <div><img src="images\SK_2.webp" alt="Skeldale House"></div>
+  <div><img src="images\SK_3.webp" alt="Skeldale House"></div>
+</div>
+
+<p>Transformation of Skeldale House - the veterinary practice is in fact a private house.
+  The grand entrance pillars are completely fake.</p>
+
+<div class="flex-cont2">
+  <div>
+    
+    <strong>The Restaurant at the Devonshire is open from 7pm until midnight</strong><br><br>
+       So why not book a table for dinner?<br><br>
+       We have 5 tables and our largest table can seat upto 12<br><br>
+       Latest ordering time is 10pm<br>
+  </div>
+
+  <div>
+    <strong>Book your table here</strong><br><br>
+
+    <form onsubmit="displayMessage(event)">
+
+    <label for="date">Date:</label>
+    <input type="date" class="large-input" id="date" name="date" required><br>
+
+    <label for="time">Time:</label>
+    <select class="large-input" id="time" name="time" required><br>
+      <option value="7:00">7:00 pm</option>
+      <option value="7:15">7:15 pm</option>
+      <option value="7:30">7:30 pm</option>
+      <option value="7:45">7:45 pm</option>
+      <option value="8:00">8:00 pm</option>
+      <option value="8:15">8:15 pm</option>
+      <option value="8:30">8:30 pm</option>
+      <option value="8:45">8:45 pm</option>
+      <option value="9:00">9:00 pm</option>
+      <option value="9:15">9:15 pm</option>
+      <option value="9:30">9:30 pm</option>
+      <option value="9:45">9:45 pm</option>
+      <option value="10:00">10:00 pm</option>
+    </select><br>
+
+    <label for="places">Places:</label>
+    <input type="number" class="large-input" id="places" name="places" min="1" max="12" required>
+
+    <br><br>
+    <input type="submit" class="large-input" value="Book Table">
+    </form> 
+
+    <button id="cancel-button" class="large-input" onclick="cancelBooking(event)">Cancel</button>
+
+    <br>
+    <br>
+    <p id="confirmation">Confirmation of your booking will appear here</p>
+    
+
+  </div>
+
+  <div>
+    <strong>See how busy we are here by moving your mouse over the table below</strong><br><br>
+
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        width: 10%;
+      }
+    </style>
+  
+    <table id="BookingTable" style="font-size: 20px; text-align: center; width: 100%; cursor: crosshair;">
+      <tr>
+        <th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th>
+      </tr>
+      <tr>
+        <td id="c0"></td><td id="c1"></td><td id="c2"></td><td id="c3"></td><td id="c4"></td><td id="c5"></td><td id="c6"></td>
+      </tr>
+      <tr>
+        <td id="c7"></td><td id="c8"></td><td id="c9"></td><td id="c10"></td><td id="c11"></td><td id="c12"></td><td id="c13"></td>
+      </tr>
+      <tr>
+        <td id="c14"></td><td id="c15"></td><td id="c16"></td><td id="c17"></td><td id="c18"></td><td id="c19"></td><td id="c20"></td>
+      </tr>
+      <tr>
+        <td id="c21"></td><td id="c22"></td><td id="c23"></td><td id="c24"></td><td id="c25"></td><td id="c26"></td><td id="c27"></td>
+      </tr>
+      <tr>
+        <td id="c28"></td><td id="c29"></td><td id="c30"></td><td id="c31"></td><td id="c32"></td><td id="c33"></td><td id="c34"></td>
+      </tr>
+    </table>
+  
+    <br>
+    <p id="line1">White background indicates some bookings for that date<br>
+      Yellow indicates that we are fully booked</p>
+    <div id="line2"></div>
+  </div>
+
+</div>
+
+<p>References and images:
+ <br>https://en.wikipedia.org/wiki/Grassington
+ <br>https://discovergrassington.co.uk/
+ <br>https://www.w3schools.com/
+ <br>Version: Grassington v6.1
+</p>
+
+
+
+<script src="script_v1.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+body {
+  background-color: rgb(190, 220, 231);  
+}
+
+.flex-container {
+  display: flex;
+  background-color: rgb(134, 181, 228);
+  justify-content: center;
+  flex-direction: row;
+}
+
+.flex-container > div {
+  background-color: black;
+  margin: 15px;
+  padding: 5px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive layout - makes a one column layout instead of a row layout */
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+    max-width: 70%; 
+    margin: auto; 
+  }
+}
+
+@media (min-width: 1300px) {
+  .flex-container {
+    flex-direction: row;
+    max-width: 1300px; 
+    margin: auto; 
+  }
+}
+
+h1 {
+  font-family:Times;
+  font-size: 50px;
+  text-align:center;
+  border: 2px solid black;
+  background-color: rgb(164, 201, 212);  
+  padding: 20px;       
+}
+
+p {
+  border: 1px solid black;
+  font-size: 20px;
+  background-color: rgb(240, 229, 200);  
+  padding: 10px;
+  margin: 10px;
+}
+
+/* Reduce font size for Mobile */
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 25px;
+    padding: 10px;       
+  }
+  p {
+    font-size: 15px;
+    padding: 5px;       
+  }
+}
+
+.flex-cont2 {
+  display: flex;
+  background-color: rgb(134, 181, 228);
+  justify-content: space-around;
+  flex-direction: row;
+  
+}
+
+.flex-cont2 > div {
+  background-color: lightgray;
+  font-size: 20px;
+  margin: 15px;
+  padding: 30px;
+  border: 2px solid black;
+  text-align: center;
+  width: 25%;
+}
+
+.large-input {
+  width: 210px;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  margin: 5px;
+}
+
+@media (max-width: 768px) {
+  .flex-cont2 {
+    flex-direction: column;
+    margin: auto; 
+  }
+  .flex-cont2 > div {
+    width: auto;
+  }
+}
+
