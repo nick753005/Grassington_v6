@@ -1,6 +1,8 @@
 
 var num_bookings = Array(31).fill(0);
 
+const month_days = [31,28,31,30,31,30,31,31,30,31,30,31];
+
 update_table();
 
 // add an event listener to each cell
@@ -45,9 +47,10 @@ for (let cell = 0; cell <= 34; cell++) {
         datestr +="0";
     datestr += date;
   
-
     const formDate = document.getElementById('date');
     formDate.value = datestr;
+
+    document.getElementById("confirmation").innerHTML = "Confirmation of your booking will appear here"
 
     //document.getElementById("line2").innerHTML = "Date = " + datestr;
  }
@@ -107,7 +110,7 @@ function update_table() {
     let cdate = d.getDate();
     let start_cell = (d.getDay() + 6) % 7;  // because Sunday is 0 and the date table starts with Monday
 
-    let days_in_month = 30;     // !!! make things easy
+    let days_in_month = month_days[ d.getMonth() ];     
     let num = 0;
 
     // fill the cells with one month of dates
